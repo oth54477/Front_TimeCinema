@@ -1,6 +1,9 @@
 const DJANGO_API_URL = process.env.VUE_APP_DJANGO_API_URL
-console.log(2)
-console.log(DJANGO_API_URL)
+const TMDB_API_KEY = process.env.VUE_APP_TMDB_API_KEY
+const TMDB_API_URL = process.env.VUE_APP_TMDB_API_URL
+
 export default {
   URL: DJANGO_API_URL,
+  TMDB_URL: TMDB_API_URL,
+  TMDB_API_KEY: TMDB_API_KEY,
 }

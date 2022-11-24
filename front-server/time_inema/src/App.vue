@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style>
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 @font-face {
   font-family: 'futur';
@@ -187,7 +187,7 @@ body::before {
   position: fixed;
   background-image: url('https://www.cinecasero.uy/img/old.webp');
   background-repeat: repeat;
-
+  /* background-size: cover; */
   opacity: 0.1;
   top: 0px;
   left: 0px;

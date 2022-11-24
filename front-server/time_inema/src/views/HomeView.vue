@@ -1,5 +1,6 @@
 <template>
   <section class="home-body" @click="goToTime">
+    <div class="film-start" v-if="startCnt"></div>
     <div class="bigBox" v-if="isCircle"  @mousemove="mouseCircle">
       <!-- <div class="film"> -->
         <!-- <img src="@/assets/sungbin.png" style="color:white"> -->
@@ -28,8 +29,14 @@
 <script>
 import LoadingPage from '@/components/LoadingPage'
 
-
 export default {
+  beforeRouteLeave (to, from, next) {
+    // this.startCnt = false
+    this.$store.commit('IS_NOT_FIRST')
+    console.log(this.startCnt)
+
+    next()
+  },
   name: 'HomeView',
   components: {
     LoadingPage,
@@ -38,12 +45,16 @@ export default {
     isLoading() {
       return this.$store.state.isLoading
     },
+    startCnt() {
+      return this.$store.state.startCnt
+    }
   },
   data() {
     return {
       cnt: 0,
       isClick: false,
       isCircle: true,
+      startWeb: false,
     }
   },
   methods: {
@@ -81,6 +92,13 @@ export default {
       // }
     }
   },
+  created() {
+
+
+  },
+  mounted() {
+
+  }
 }
 
 </script>
@@ -147,5 +165,28 @@ export default {
   height: 6872px;
   top: 0;
   width: 70px;
+}
+
+.film-start {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-image: url('https://j.gifs.com/KeX0g7.gif');
+  z-index: 999;
+  background-size: 100vw 100vh;
+  animation: startWeb 5s forwards;
+}
+
+@keyframes startWeb {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 </style>

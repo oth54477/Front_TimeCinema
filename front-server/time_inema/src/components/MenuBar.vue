@@ -13,7 +13,7 @@
         <div class="fa fa-solid fa-house"></div>
 				<div class="btn-text btn-text-home"><span>Home</span></div>
       </div>
-      <div class="btn-app" @click="search">
+      <div class="btn-app" @click="$router.push({ name: 'search' })">
         <div class="fa fa-solid fa-magnifying-glass"></div>
 				<div class="btn-text btn-text-search"><span>Search</span></div>
       </div>
@@ -25,7 +25,7 @@
 				<div class="btn-text"><span>Github</span></div>
       </div>
       <div class="btn-app">
-        <div class="fa fa-solid fa-face-smile-wink"></div>
+        <div class="fa fa-solid fa-face-smile-wink" @click="$router.push({ name: 'ending' })"></div>
 				<!-- <i class="fa-solid fa-face-smile-tongue"></i> -->
 				<div class="btn-text"><span>Celebrity</span></div>
       </div>
@@ -42,17 +42,14 @@
 				<div class="btn-text"><span>Signup</span></div>
       </div>
       <div class="btn-app login-btn" @click="popUp('login')" v-if="token == null">
-        <!-- <div class="fa fa-solid fa-right-to-bracket" style="--fa-primary-color: gold;"></div> -->
         <div><i class="fa fa-solid fa-right-to-bracket"></i></div>
 				<div class="btn-text"><span>Login</span></div>
       </div>
       <div class="btn-app logout-btn"  @click="logOut" v-if="token">
-        <!-- <div class="fa fa-solid fa-right-to-bracket" style="--fa-primary-color: gold;"></div> -->
         <div><i class="fa fa-solid fa-right-from-bracket"></i></div>
 				<div class="btn-text"><span>Logout</span></div>
       </div>
       <div class="btn-app	 profile-btn"  @click="goTo('profile')" @mouseover="profileSub">
-        <!-- <div class="fa fa-vine"></div> -->
         <div><i class="fa fa-solid fa-user"></i></div>
 				<div class="btn-text"><span>Profile</span></div>
       </div>

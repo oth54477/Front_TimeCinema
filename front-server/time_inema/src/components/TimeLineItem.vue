@@ -1,9 +1,8 @@
 <template>
   <div class="tl-item" @click="goToRecommend(itemInfo.routerName)">
-    <!-- <div class="tl-bg" style="background-image: url(https://mblogthumb-phinf.pstatic.net/20150914_28/shdudtn1234_1442232589804UsVv8_JPEG/%BB%E7%B1%D8_%BF%B5%C8%AD_%C3%DF%C3%B5_BEST_10%A2%BE_%C7%D1%B1%B9%C0%C7_%B8%C5%B7%C2%C0%FB%C0%CE_%B0%FA%B0%C5_%BB%E7%B1%D8%BF%B5%C8%AD%B8%A6_%BE%CB%BE%C6%BA%B8%C0%DA_%282%29.jpg?type=w2)"></div> -->
     <div class="tl-bg" :style="posterObject"></div>
     <div class="tl-year">
-      <p class="f2 heading--sanSerif">{{ itemInfo.times }}</p>
+      <p class="f2 time-text">{{ itemInfo.times }}</p>
     </div>
 
     <div class="tl-content">
@@ -38,7 +37,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 .tl-item {
   transform: translate3d(0, 0, 0);
   position: relative;
@@ -89,6 +88,7 @@ export default {
       opacity: 1;
       transform: translateY(0);
       transition: all 0.75s ease 0.5s;
+      margin: 15vh 0vh;
     }
 
     .tl-bg {
@@ -121,8 +121,6 @@ export default {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
   
   p {
     // font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -154,5 +152,9 @@ export default {
   right: 0px;
   bottom: 0px;
   
+}
+
+.time-text {
+  font-family: 'Noto Sans KR', sans-serif;
 }
 </style>

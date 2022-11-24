@@ -33,10 +33,12 @@ export default new Vuex.Store({
     },
     login: null,
     loginCnt: 0,
+    startCnt: true,
     movies: null,
     isLoading: false,
     modal: false,
     userList: null,
+    isFirst: true,
     timesTable: {
       period: 0,
       past: 1,
@@ -88,6 +90,9 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    IS_NOT_FIRST(state) {
+      state.startCnt = false
+    },
     LOADING_START(state) {
       state.isLoading = true
       console.log('loading : ', state.isLoading)

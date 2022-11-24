@@ -10,9 +10,7 @@
 <script>
 export default {
   name: 'ProfileLike',
-  components: {
-    
-  },
+
   props: {
     like: Object,
   }
